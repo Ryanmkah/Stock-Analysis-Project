@@ -1,15 +1,30 @@
+<<<<<<< HEAD
 #Ryan Kahrimanian Final Project for Fordham's Python Programming Class
+=======
+#Ryan Kahrimanian Final Project for Fordham's ST:Programming with Python Class
+
+#3 Stocks I will use
+# Tencent TCEHY
+# Baidu BIDU
+# Alibaba BABA
+
+
+>>>>>>> 5937beb43f4887ddf8fd0a08a7d1a85e0ef4a197
 
 #All of my imports
 import pandas as pd
 import matplotlib.pyplot as plt
+<<<<<<< HEAD
 import yfinance as yf
 import numpy as np
+=======
+>>>>>>> 5937beb43f4887ddf8fd0a08a7d1a85e0ef4a197
 import os
 
 #This gets the base directory where the files are stored and adds secruity 
 directory = os.path.dirname(__file__)
 
+<<<<<<< HEAD
 stock= os.path.join(directory, "stock_data.csv")
 
 
@@ -59,4 +74,3 @@ yf_data(tickers_list)
 
 
 print("Thank you and I hope you found this useful")
- 
