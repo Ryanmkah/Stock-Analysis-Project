@@ -9,8 +9,6 @@ import os
 
 #This gets the base directory where the files are stored and adds secruity 
 directory = os.path.dirname(__file__)
-
-
 stock= os.path.join(directory, "stock_data.csv")
 
 
