@@ -11,67 +11,75 @@ Bachelor of Science in Finance with a concentration in FinTech
 Fordham University, Gabelli School of Business  
 [LinkedIn](https://www.linkedin.com/in/ryankah96/)
 
-## Project Description
+```markdown
+# Stock Data Analysis Project
 
-This project uses Python to analyze stock data for Tencent, Baidu, and Alibaba. The main features of the project include:
-- Reading stock data from CSV files
-- Calculating 4-day and 2-day moving averages
-- Generating buy/sell signals based on the moving averages
-- Plotting stock prices and moving averages
+## Overview
+This project fetches stock data for specified tickers from Yahoo Finance, calculates a 2-day moving average, and visualizes the stock prices along with their volume. The script allows users to input multiple stock tickers and generates plots for each.
 
-## Project Files
-
-- `TCEHY.csv`, `BIDU.csv`, `BABA.csv`: CSV files containing stock price data for Tencent, Baidu, and Alibaba.
-- `TCEHY_UPDATED.csv`, `BIDU_UPDATED.csv`, `BABA_UPDATED.csv`: CSV files that will be generated to store the buy/sell signals.
+## Features
+- Fetches historical stock data from Yahoo Finance.
+- Calculates and plots the 2-day moving average.
+- Plots stock prices and volume on a dual-axis chart.
+- Handles multiple stock tickers input by the user.
 
 ## Requirements
-
 - Python 3.x
-- pandas
-- matplotlib
+- `pandas` library
+- `matplotlib` library
+- `yfinance` library
+- `numpy` library
+- `os` library (comes with Python standard library)
 
 ## Installation
-
-1. **Clone the Repository:**
+1. Clone the repository:
    ```sh
-   git clone https://github.com/ryankahrimanian/stock-analysis.git
+   git clone https://github.com/yourusername/your-repo-name.git
    ```
-2. **Navigate to the Project Directory:**
+2. Navigate to the project directory:
    ```sh
-   cd stock-analysis
+   cd your-repo-name
    ```
-3. **Install the Required Packages:**
+3. Install the required libraries:
    ```sh
-   pip install pandas matplotlib
+   pip install pandas matplotlib yfinance numpy
    ```
 
 ## Usage
-
-1. **Run the Script:**
+1. Run the script:
    ```sh
-   python stock_analysis.py
+   python your_script_name.py
    ```
-2. **View the Results:**
-   - The script will generate updated CSV files with buy/sell signals.
-   - It will also display plots of stock prices and moving averages.
+2. Input the stock tickers when prompted, separated by commas (e.g., `AAPL, MSFT, TSLA`).
 
-## Code Structure
+## Code Explanation
+### Imports
+- `pandas` for data manipulation and analysis.
+- `matplotlib.pyplot` for plotting graphs.
+- `yfinance` for fetching stock data.
+- `numpy` for handling arrays.
+- `os` for handling file paths.
 
-- **Imports and File Paths:**
-  The necessary libraries are imported, and the file paths for the CSV files are defined using relative paths for portability.
+### Functions
+- `yf_data(tickers)`: Fetches data for the provided stock tickers, calculates the 2-day moving average, and calls the `plot` function.
+- `plot(date, price, volume, ma, stock_name)`: Plots the stock prices, 2-day moving average, and volume on a dual-axis chart.
 
-- **Plotting Function:**
-  A function `plot` is defined to visualize stock prices and moving averages.
+### Main Script
+- Prompts the user to input stock tickers.
+- Processes each ticker to fetch data and generate plots.
 
-- **Processing Function:**
-  The `process_stocks` function reads the stock data, calculates moving averages, generates buy/sell signals, and writes the results to new CSV files. It also calls the `plot` function to visualize the data.
+## Example
+```sh
+What stock would you like to analyze? Please input the stock's ticker symbol. Please separate tickers with a ','.
+AAPL, MSFT, TSLA
+```
 
-## Future Enhancements
+## Output
+The script will generate and display plots for each stock ticker showing the stock prices, 2-day moving average, and volume.
 
-- Add error handling for missing or incorrect data.
-- Include additional stock analysis metrics.
-- Enhance the visualization with more interactive plots.
+```
 
+Feel free to customize the `git clone` command and paths according to your repository and script names.
 ## Contact
 
 For any questions or suggestions, feel free to reach out to me:
