@@ -1,0 +1,62 @@
+#Ryan Kahrimanian Final Project for Fordham's Python Programming Class
+
+#All of my imports
+import pandas as pd
+import matplotlib.pyplot as plt
+import yfinance as yf
+import numpy as np
+import os
+
+#This gets the base directory where the files are stored and adds secruity 
+directory = os.path.dirname(__file__)
+
+stock= os.path.join(directory, "stock_data.csv")
+
+
+#This function is taking a stock ticker and getting the data from yahoo finance
+def yf_data(tickers):
+    for ticker in tickers:
+        data = yf.download([ticker],period = "5d")  
+        data.to_csv(stock)
+        #This is saving the data to df
+        df = pd.read_csv(stock)
+        
+        #This saves the company's name to a var and allows me to replace the ticker on the graph with the company's full name
+        stock_info = yf.Ticker(ticker)
+        stock_name = stock_info.info["longName"]
+        
+        #This pulls the Dates and Stock Prices and saves them to a var
+        date_array= np.array(df["Date"])
+        price_array= np.array(df["Close"])        
+        volume_array= np.array(df["Volume"])
+
+        ma = [(price_array[i] + price_array[i+1])/2 for i in range(len(price_array)-1)]
+        #This is calling the plot function
+        plot(date_array[1:],price_array[1:],volume_array[1:],ma,stock_name)
+        
+#This function is using matplotlib to graph the values defined in the yf_data function
+def plot(date,price,volume, ma,stock_name):
+    fig, ax= plt.subplots()
+    ax.set_xlabel("Date")
+    ax.set_ylabel("Stock Price")
+    ax.grid(True)
+    ax.plot(date,price,label = "Stock Price", marker = "o", color="tab:blue")
+    ax.plot(date, ma,label = "2 Day MA",linestyle = "--", marker = "o", color="tab:orange")
+    ax.legend(loc="upper left")
+    #This is seting a second ax that shares values with the one above to show volume 
+    ax2 = ax.twinx()
+    ax2.set_ylabel("Volume in Millions", color= "tab:red")
+    ax2.bar(date, volume,alpha=0.2, color="tab:red")
+    plt.title(stock_name)
+    fig.tight_layout()
+    plt.show()
+    
+#This is calling the function taking the string of stock ticker
+tickers_input= input("What stock would you like to analyze? Please input the stock's ticker symbol. Please separate tickers with a ','.\n ")
+tickers_list = [ticker.strip() for ticker in tickers_input.split(",")]
+yf_data(tickers_list)
+ 
+
+
+print("Thank you and I hope you found this useful")
+ 
