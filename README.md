@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project performs stock analysis on three prominent stocks: Tencent (TCEHY), Baidu (BIDU), and Alibaba (BABA). The analysis involves calculating moving averages and generating buy/sell signals based on the stock prices.
+This project performs stock analysis. The analysis involves calculating moving averages and generating closing price chart.
 
 ## Author
 
