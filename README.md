@@ -1,8 +1,8 @@
 # Stock Analysis Project
 
 ## Overview
+This project involves a Python application for fetching, analyzing, and visualizing stock data using Yahoo Finance API. It calculates 2-day moving averages and creates dual-axis plots for stock prices and trading volume, supporting multiple stock tickers. Utilizes Pandas, Matplotlib, and NumPy for efficient data handling and visualization.
 
-This project performs stock analysis. The analysis involves calculating moving averages and generating closing price chart.
 
 ## Author
 
@@ -15,7 +15,7 @@ Fordham University, Gabelli School of Business
 # Stock Data Analysis Project
 
 ## Overview
-This project fetches stock data for specified tickers from Yahoo Finance, calculates a 2-day moving average, and visualizes the stock prices along with their volume. The script allows users to input multiple stock tickers and generates plots for each.
+This project fetches stock data from Yahoo Finance, calculates a 2-day moving average, and visualizes the stock prices along with their volume. The script allows users to input multiple stock tickers and generates plots for each.
 
 ## Features
 - Fetches historical stock data from Yahoo Finance.
